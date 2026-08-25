@@ -3,6 +3,9 @@
 
 # 部署方式
 1.创建一个KV储存
+
 2.创建一个Worker，绑定上一步创建的KV，KV变量名称设置为VISITOR_COUNTER
+
 3.worker.js代码部署进Worker
+
 4.部署前端代码，参考footer.html
