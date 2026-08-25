@@ -1,7 +1,7 @@
 export default {
   async fetch(request, env) {
     // 1. 配置允许访问的来源域名白名单
-    const allowedOrigins = ['https://www.zhangminghao.com'];
+    const allowedOrigins = ['https://example.com'];
     // 获取请求的来源域名
     const origin = request.headers.get('Origin');
 
