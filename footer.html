@@ -1,0 +1,34 @@
+<!-- 示例代码 -->
+<footer class="">
+  <div class="container">
+    <div class="row">
+      网站数据概况 - 当前页面访问量 <span id="page-view-count">加载中...</span> | 网站总访问量 <span id="all-page-view-count">加载中...</span>
+		<script>
+		  const currentPath = window.location.pathname;
+		  const workerBaseUrl = 'https://你的worker域名';  // 请替换为你真实的 Worker 地址
+		  fetch(workerBaseUrl + currentPath, { 
+		    method: 'POST' 
+		  })
+		  .then(response => response.json())
+		  .then(data => {
+		    document.getElementById('page-view-count').textContent = data.count;
+		  })
+		  .catch(error => {
+		    console.error('获取阅读量失败:', error);
+		  });
+		</script>
+		<script>
+		  fetch('https://你的worker域名/all-page', { // 请替换为你真实的 Worker 地址
+		    method: 'POST' 
+		  })
+		  .then(response => response.json())
+		  .then(data => {
+		    document.getElementById('all-page-view-count').textContent = data.count;
+		  })
+		  .catch(error => {
+		    console.error('获取阅读量失败:', error);
+		  });
+		</script>
+    </div>
+  </div>
+</footer>
